@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Changer</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image and Change Colors</h1>
+        <h4>Upload a PNG image with only black as the logo design</h4>
+        <div>
+            <label for="colorPicker">Choose a color:</label>
+            <input type="color" id="colorPicker" value="#ffffff">
+            <input type="text" id="hexInput" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" placeholder="#ffffff" title="Enter a valid hex code.">
+        </div>
+        <input type="file" id="imageInput" accept="image/png">
+        <div class="button-container">
+            <button onclick="loadImage()">Process Image</button>
+        </div>
+        <div class="checkered-background" style="width: 100%; padding-top: 100%; position: relative;">
+            <canvas id="imageCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+        </div>
+        <div class="button-container">
+            <button id="downloadButton" class="hidden" onclick="downloadCanvas()">Download All Images</button>
+        </div>
+    </div>
+    
+</body>
+<script src="static/js/script.js"></script>
+
+
+</html>
